@@ -37,5 +37,5 @@ def showResult(img):
     plt.show()
     return
 
-showResult(Image.open('../HW1_test_image/Peppers.bmp'))
+showResult(Image.open('./HW1_test_image/Peppers.bmp'))
 

@@ -15,6 +15,6 @@ def combine(oringImg, translateImg):
     return dst
 
 
-powerlaw(Image.open('../HW1_test_image/Peppers.bmp').convert('RGB'),0.85)
-powerlaw(Image.open('../HW1_test_image/Jetplane.bmp').convert('RGB'),0.97)
-powerlaw(Image.open('../HW1_test_image/Lake.bmp').convert('RGB'),1.03)
+powerlaw(Image.open('./HW1_test_image/Peppers.bmp').convert('RGB'),0.85)
+powerlaw(Image.open('./HW1_test_image/Jetplane.bmp').convert('RGB'),0.97)
+powerlaw(Image.open('./HW1_test_image/Lake.bmp').convert('RGB'),1.03)
