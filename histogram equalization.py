@@ -15,7 +15,7 @@ def histogram_Equalization(img):
 
 def showResult(img):
     result = histogram_Equalization(img)
-    plt.figure(figsize=(20,30))
+    plt.figure(figsize=(10,10))
     
     plt.subplot(2,2,1)
     plt.title("Original Image")
@@ -23,7 +23,7 @@ def showResult(img):
     plt.imshow(img)
     
     plt.subplot(2,2,2)
-    plt.title("Histrogram - Original Image")
+    plt.title("The Histrogram - Original Image")
     plt.hist(np.array(img).ravel(),bins=256,range=(0,255))
     
     plt.subplot(2,2,3)
@@ -32,10 +32,12 @@ def showResult(img):
     plt.imshow(Image.fromarray(np.uint8(result)))
     
     plt.subplot(2,2,4)
-    plt.title("Histrogram - After Equalization Image")
+    plt.title("The Histrogram - After Equalization Image")
     plt.hist(result.ravel(),bins=256,range=(0,255))
     plt.show()
     return
 
-showResult(Image.open('./HW1_test_image/Peppers.bmp'))
+showResult(Image.open('../HW1_test_image/Peppers.bmp'))
+showResult(Image.open('../HW1_test_image/Jetplane.bmp'))
+showResult(Image.open('../HW1_test_image/Lake.bmp'))
 
