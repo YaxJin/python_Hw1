@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 def powerlaw(img,gamma):
     img_array = np.array(img)
     im_gamma = img_array ** gamma
-    showResult(img,Image.fromarray(np.uint8(im_gamma)))
+    showResult(img,Image.fromarray(np.uint8(np.clip(im_gamma, 0, 255))))
     return
 
 
@@ -27,5 +27,5 @@ def showResult(img,after_transformation_image):
 
 
 powerlaw(Image.open('../HW1_test_image/Peppers.bmp').convert('RGB'),0.85)
-powerlaw(Image.open('../HW1_test_image/Jetplane.bmp').convert('RGB'),0.97)
-powerlaw(Image.open('../HW1_test_image/Lake.bmp').convert('RGB'),1.03)
+powerlaw(Image.open('../HW1_test_image/Jetplane.bmp').convert('RGB'),0.95)
+powerlaw(Image.open('../HW1_test_image/Lake.bmp').convert('RGB'),1.1)
