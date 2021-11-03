@@ -26,6 +26,6 @@ def showResult(img,after_transformation_image):
     return
 
 
-powerlaw(Image.open('../HW1_test_image/Peppers.bmp').convert('RGB'),0.85)
-powerlaw(Image.open('../HW1_test_image/Jetplane.bmp').convert('RGB'),0.95)
-powerlaw(Image.open('../HW1_test_image/Lake.bmp').convert('RGB'),1.1)
+powerlaw(Image.open('../HW1_test_image/Peppers.bmp').convert('L'),0.85)
+powerlaw(Image.open('../HW1_test_image/Jetplane.bmp').convert('L'),0.95)
+powerlaw(Image.open('../HW1_test_image/Lake.bmp').convert('L'),1.1)

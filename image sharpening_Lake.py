@@ -25,17 +25,17 @@ def showResult(img,lap,after_transformation_image):
     plt.show()
     return
 
-img = Image.open('../HW1_test_image/Lake.bmp')
+img = Image.open('../HW1_test_image/Lake.bmp').convert('L')
 img_array = np.array(img)
 
 img_array = (img_array - np.amin(img_array))*255.0 /(np.amax(img_array)-np.amin(img_array)) 
 kernel = np.ones((3,3))*(0)
-kernel[1,1] = -4
-kernel[0,1] = kernel[1,0] = kernel[1,2] = kernel[2,1] = 1
+kernel[1,1] = 4
+kernel[0,1] = kernel[1,0] = kernel[1,2] = kernel[2,1] = -1
 #print("kernel:\n",kernel)
 lap = scipy.ndimage.filters.convolve(img_array, kernel)
 
-Sharpening_factor = 200
+Sharpening_factor = 150
 Laps = lap*Sharpening_factor/np.amax(lap) 
 result = np.clip(img_array + Laps, 0, 255)
 

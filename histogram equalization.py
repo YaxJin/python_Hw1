@@ -28,7 +28,7 @@ def showResult(img):
     
     plt.subplot(2,2,3)
     plt.title("After Equalization Image")
-    plt.axis('off') 
+    plt.axis('off')
     plt.imshow(Image.fromarray(np.uint8(result)))
     
     plt.subplot(2,2,4)
@@ -37,7 +37,6 @@ def showResult(img):
     plt.show()
     return
 
-showResult(Image.open('../HW1_test_image/Peppers.bmp'))
-showResult(Image.open('../HW1_test_image/Jetplane.bmp'))
-showResult(Image.open('../HW1_test_image/Lake.bmp'))
-
+showResult(Image.open('../HW1_test_image/Peppers.bmp').convert('L'))
+showResult(Image.open('../HW1_test_image/Jetplane.bmp').convert('L'))
+showResult(Image.open('../HW1_test_image/Lake.bmp').convert('L'))
