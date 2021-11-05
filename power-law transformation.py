@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 
 def powerlaw(img,gamma):
     img_array = np.array(img)
-    im_gamma = img_array ** gamma
-    showResult(img,Image.fromarray(np.uint8(np.clip(im_gamma, 0, 255))))
+    im_gamma = np.clip(img_array ** gamma, 0, 255)
+    showResult(img,Image.fromarray(np.uint8(im_gamma)))
     return
 
 

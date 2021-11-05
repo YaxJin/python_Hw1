@@ -29,10 +29,11 @@ def showResult(img,lap,after_transformation_image):
 img = Image.open('../HW1_test_image/Jetplane.bmp').convert('L')
 img_array = np.array(img)
 
-img_array = (img_array - np.amin(img_array))*255.0 /(np.amax(img_array)-np.amin(img_array))
+
 kernel = np.ones((3,3))*(-1)
 kernel[1,1] = 8
 #print("kernel:\n",kernel)
+img_array = (img_array - np.amin(img_array))*255.0 /(np.amax(img_array)-np.amin(img_array))
 lap = scipy.ndimage.filters.convolve(img_array, kernel)
 
 Sharpening_factor = 150
